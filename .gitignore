@@ -1,0 +1,13 @@
+# 个人运行状态（托盘选择的落位方式），由脚本自动重建
+WinDuo.ini
+
+# Windows 杂项
+Thumbs.db
+Desktop.ini
+
+# 其他
+Source/
+Release/
+
+# 调试用的一次性脚本和它们的输出，不是产品的一部分（见 test/README.md）
+test/
