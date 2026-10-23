@@ -1,0 +1,15 @@
+# 不做隐式换行转换，统一由下面这条默认规则决定：core.autocrlf=true 的机器上，
+# 一次 checkout 就能把整份 .ahk / .md 变成 CRLF，编辑器里全是整文件差异
+* text=auto eol=lf
+
+# 运行时配置是 UTF-16（Win32 ini 解析器遇到 UTF-8 BOM 会整文件解析失败），
+# 任何文本处理都可能改坏它。它本来被 .gitignore 忽略，这条是防 --force-add
+*.ini   binary
+
+# 二进制资源：不转换换行，也不要在 diff 里刷乱码
+*.ico   binary
+*.png   binary
+*.jpg   binary
+
+# GitHub 语言统计按 AHK 识别，而不是退化成未知语言
+*.ahk   linguist-language=AutoHotkey
